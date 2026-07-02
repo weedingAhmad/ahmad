@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>أحمد & سافانا — دعوة زواج | Ahmad & Sufana — Wedding Invitation</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@400;500;600;700&family=Almarai:wght@300;400;700&family=Marcellus&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#FFF7EE;
+  --cream-2:#FFEFE0;
+  --berry:#5A2547;        /* deep festive plum — main text */
+  --rose:#E4577E;         /* joyful rose */
+  --rose-soft:rgba(228,87,126,.22);
+  --gold:#D89B3D;         /* warm celebration gold */
+  --gold-soft:rgba(216,155,61,.35);
+  --mint:#4FB39A;         /* small fresh touches */
+  --line:rgba(216,155,61,.4);
+  --muted:#9A7A8C;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);
+  color:var(--berry);
+  font-family:'Almarai','Marcellus',sans-serif;
+  line-height:1.8;
+  overflow-x:hidden;
+}
+[lang-en] body{font-family:'Marcellus','Almarai',serif}
+
+/* ---------- floating confetti ---------- */
+.confetti{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden}
+.confetti i{
+  position:absolute;top:-4vh;display:block;border-radius:2px;opacity:.75;
+  animation:fall linear infinite;
+}
+@keyframes fall{
+  0%{transform:translateY(0) rotate(0deg)}
+  100%{transform:translateY(108vh) rotate(540deg)}
+}
+@media (prefers-reduced-motion: reduce){
+  .confetti{display:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+
+main{position:relative;z-index:1}
+
+/* ---------- top controls ---------- */
+.top-controls{
+  position:fixed;top:16px;inset-inline-start:16px;z-index:10;
+  display:flex;gap:10px;
+}
+.chip{
+  background:rgba(255,247,238,.85);backdrop-filter:blur(8px);
+  border:1px solid var(--line);border-radius:999px;
+  color:var(--rose);font-family:'Almarai',sans-serif;font-weight:700;
+  padding:8px 18px;font-size:.9rem;cursor:pointer;letter-spacing:.03em;
+  transition:background .3s,color .3s,transform .2s;
+  box-shadow:0 4px 16px rgba(90,37,71,.08);
+}
+.chip:hover{transform:translateY(-1px)}
+.chip:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+.chip.on{background:var(--rose);color:#fff;border-color:var(--rose)}
+
+/* ---------- hero ---------- */
+.hero{
+  min-height:100svh;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;
+  padding:90px 24px 60px;position:relative;
+  background:
+    radial-gradient(ellipse 70% 45% at 50% 0%, rgba(228,87,126,.10) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 40% at 85% 90%, rgba(216,155,61,.12) 0%, transparent 70%),
+    radial-gradient(ellipse 45% 35% at 10% 85%, rgba(79,179,154,.10) 0%, transparent 70%);
+}
+.arch{
+  position:relative;
+  width:min(560px,90vw);
+  padding:clamp(48px,8vw,84px) clamp(20px,6vw,56px) clamp(36px,6vw,64px);
+  border:1.5px solid var(--gold-soft);
+  border-radius:300px 300px 24px 24px;
+  background:rgba(255,255,255,.55);
+  box-shadow:0 24px 70px rgba(90,37,71,.10);
+}
+.arch::before{
+  content:"";position:absolute;inset:10px;
+  border:1px dashed var(--rose-soft);
+  border-radius:290px 290px 18px 18px;
+  pointer-events:none;
+}
+.eyebrow{
+  color:var(--rose);letter-spacing:.32em;font-size:.8rem;font-weight:700;
+  text-transform:uppercase;margin-bottom:26px;
+}
+.names{
+  font-family:'Marcellus','Reem Kufi',serif;
+  font-size:clamp(2.6rem,9vw,4.6rem);
+  font-weight:400;color:var(--berry);line-height:1.35;
+  letter-spacing:.03em;
+}
+[lang-en] .names{font-family:'Marcellus',serif;font-weight:400}
+.amp{
+  display:block;font-family:'Marcellus',serif;
+  color:var(--rose);font-size:clamp(1.4rem,4vw,2rem);
+  font-style:italic;line-height:1.6;
+}
+.hero-sub{color:var(--muted);margin-top:22px;font-size:1.05rem}
+.hero-date{
+  margin-top:30px;display:inline-block;
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  color:#fff;border-radius:999px;
+  padding:12px 34px;letter-spacing:.1em;font-size:1rem;font-weight:700;
+  box-shadow:0 10px 26px rgba(228,87,126,.3);
+}
+.scroll-hint{margin-top:46px;color:var(--muted);font-size:.85rem}
+.scroll-hint span{display:block;animation:drop 2s ease-in-out infinite;color:var(--rose)}
+@keyframes drop{0%,100%{transform:translateY(0)}50%{transform:translateY(8px)}}
+
+/* ---------- shared section ---------- */
+section{padding:clamp(60px,10vw,110px) 24px;max-width:820px;margin:0 auto;text-align:center}
+.sec-title{
+  font-family:'Reem Kufi','Marcellus',sans-serif;
+  color:var(--rose);font-size:clamp(1.5rem,4vw,2rem);font-weight:600;margin-bottom:14px;
+}
+[lang-en] .sec-title{font-family:'Marcellus',serif}
+.divider{
+  width:80px;height:2px;border-radius:2px;margin:0 auto 34px;position:relative;
+  background:linear-gradient(90deg,var(--rose),var(--gold),var(--mint));
+}
+.divider::after{
+  content:"";position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);
+  width:8px;height:8px;background:var(--gold);border-radius:2px;
+}
+
+/* ---------- verse ---------- */
+.verse{
+  font-size:clamp(1.15rem,3vw,1.5rem);line-height:2.3;color:var(--berry);
+  max-width:640px;margin:0 auto;
+}
+.verse-ref{color:var(--muted);font-size:.9rem;margin-top:16px}
+
+/* ---------- details ---------- */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:18px;margin-top:10px}
+.card{
+  border:1px solid rgba(216,155,61,.3);border-radius:20px;
+  background:#fff;
+  padding:30px 20px;
+  box-shadow:0 12px 34px rgba(90,37,71,.07);
+  transition:transform .3s;
+  border-top:4px solid var(--rose);
+}
+.card:nth-child(2){border-top-color:var(--gold)}
+.card:nth-child(3){border-top-color:var(--mint)}
+.card:hover{transform:translateY(-4px)}
+.card .icon{font-size:1.7rem;margin-bottom:12px}
+.card .label{color:var(--muted);font-size:.85rem;letter-spacing:.1em;margin-bottom:6px}
+.card .value{color:var(--berry);font-size:1.1rem;font-weight:700}
+[lang-en] .card .value{font-weight:400;font-family:'Marcellus',serif}
+
+/* ---------- countdown ---------- */
+.count{display:flex;justify-content:center;gap:clamp(10px,3vw,26px);flex-wrap:wrap}
+.count .unit{
+  min-width:88px;padding:22px 12px;border-radius:18px;background:#fff;
+  box-shadow:0 12px 30px rgba(90,37,71,.08);
+  border-bottom:4px solid var(--rose);
+}
+.count .unit:nth-child(2){border-bottom-color:var(--gold)}
+.count .unit:nth-child(3){border-bottom-color:var(--mint)}
+.count .unit:nth-child(4){border-bottom-color:var(--berry)}
+.count .num{
+  font-family:'Marcellus',serif;font-size:clamp(1.8rem,5vw,2.6rem);color:var(--berry);
+  font-variant-numeric:tabular-nums;line-height:1.2;
+}
+.count .lbl{color:var(--muted);font-size:.8rem;margin-top:6px;letter-spacing:.08em}
+
+/* ---------- venue ---------- */
+.venue-name{font-size:1.3rem;font-weight:700;color:var(--berry);margin-bottom:6px}
+.venue-addr{color:var(--muted);font-size:.95rem;margin-bottom:28px}
+.map-wrap{
+  border:1px solid rgba(216,155,61,.35);border-radius:22px;overflow:hidden;
+  aspect-ratio:16/10;margin-bottom:28px;
+  box-shadow:0 16px 44px rgba(90,37,71,.10);
+}
+.map-wrap iframe{width:100%;height:100%;border:0}
+
+/* ---------- buttons ---------- */
+.btn-row{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
+.btn{
+  display:inline-block;text-decoration:none;border-radius:999px;
+  padding:14px 34px;font-size:1rem;font-weight:700;letter-spacing:.03em;
+  transition:transform .25s,box-shadow .25s,background .25s,color .25s;
+  font-family:inherit;cursor:pointer;
+}
+.btn:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+.btn-main{
+  background:linear-gradient(90deg,var(--rose),var(--gold));
+  color:#fff;border:none;box-shadow:0 10px 26px rgba(228,87,126,.28);
+}
+.btn-main:hover{transform:translateY(-2px);box-shadow:0 14px 34px rgba(228,87,126,.38)}
+.btn-ghost{background:#fff;color:var(--rose);border:1.5px solid var(--rose-soft)}
+.btn-ghost:hover{background:var(--rose);color:#fff}
+
+/* ---------- rsvp ---------- */
+.rsvp-note{color:var(--muted);max-width:520px;margin:0 auto 30px;font-size:1rem}
+
+/* ---------- footer ---------- */
+footer{
+  text-align:center;padding:60px 24px 50px;color:var(--muted);font-size:.9rem;
+  border-top:1px solid rgba(216,155,61,.25);
+}
+footer .fam{color:var(--rose);font-family:'Reem Kufi',sans-serif;font-size:1.15rem;margin-bottom:10px;font-weight:600}
+
+/* reveal on scroll */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .8s ease,transform .8s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none}}
+
+/* ---------- opening gate ---------- */
+.gate{
+  position:fixed;inset:0;z-index:50;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;text-align:center;padding:32px;
+  background:
+    radial-gradient(ellipse 70% 50% at 50% 30%, rgba(228,87,126,.14) 0%, transparent 70%),
+    linear-gradient(180deg,var(--cream) 0%,var(--cream-2) 100%);
+  transition:opacity .9s ease,visibility .9s ease;
+}
+.gate.hidden{opacity:0;visibility:hidden}
+.gate-card{
+  border:1.5px solid var(--gold-soft);border-radius:26px;
+  background:rgba(255,255,255,.65);
+  box-shadow:0 30px 80px rgba(90,37,71,.14);
+  padding:clamp(40px,7vw,64px) clamp(26px,6vw,56px);max-width:440px;width:100%;
+  animation:gateIn 1s ease both;
+}
+@keyframes gateIn{from{opacity:0;transform:translateY(20px) scale(.98)}to{opacity:1;transform:none}}
+.gate-eyebrow{color:var(--rose);letter-spacing:.3em;font-size:.78rem;font-weight:700;text-transform:uppercase;margin-bottom:20px}
+.gate-names{
+  font-family:'Marcellus',serif;font-size:clamp(2.2rem,7vw,3.2rem);color:var(--berry);
+  line-height:1.4;letter-spacing:.03em;margin-bottom:8px;
+}
+.gate-names .amp{color:var(--rose);font-style:italic;display:block;font-size:.6em;margin:2px 0}
+.gate-sub{color:var(--muted);font-size:1rem;margin-bottom:32px}
+.gate-btn{
+  border:none;border-radius:999px;cursor:pointer;font-family:inherit;
+  background:linear-gradient(90deg,var(--rose),var(--gold));color:#fff;
+  padding:15px 40px;font-size:1.05rem;font-weight:700;letter-spacing:.04em;
+  box-shadow:0 12px 30px rgba(228,87,126,.32);
+  transition:transform .25s,box-shadow .25s;
+  animation:pulse 2.4s ease-in-out infinite;
+}
+.gate-btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(228,87,126,.42)}
+.gate-btn:focus-visible{outline:2px solid var(--berry);outline-offset:3px}
+@keyframes pulse{0%,100%{box-shadow:0 12px 30px rgba(228,87,126,.32)}50%{box-shadow:0 12px 44px rgba(228,87,126,.5)}}
+@media (prefers-reduced-motion: reduce){.gate-card,.gate-btn{animation:none}}</style>
+</head>
+<body>
+<div class="gate" id="gate">
+  <div class="gate-card">
+    <p class="gate-eyebrow" data-ar="دعوة زفاف" data-en="Wedding Invitation">دعوة زفاف</p>
+    <h1 class="gate-names">Ahmad<span class="amp">&amp;</span>Sufana</h1>
+    <p class="gate-sub" data-ar="بكل حب.. ندعوكم لمشاركتنا الفرحة" data-en="With love, we invite you to share our joy">بكل حب.. ندعوكم لمشاركتنا الفرحة</p>
+    <button class="gate-btn" id="openBtn" data-ar="افتح الدعوة" data-en="Open Invitation">افتح الدعوة</button>
+  </div>
+</div>
+
+<div class="confetti" id="confetti" aria-hidden="true"></div>
+
+<div class="top-controls">
+  <button class="chip" id="langBtn" aria-label="Switch language">English</button>
+  <button class="chip" id="musicBtn" aria-label="Toggle music" aria-pressed="false">🎵 <span data-ar="شغّل الموسيقى" data-en="Play music">شغّل الموسيقى</span></button>
+</div>
+
+<main>
+  <!-- HERO -->
+  <div class="hero">
+    <div class="arch">
+      <p class="eyebrow" data-ar="بفضلٍ من الله وتوفيقه" data-en="With the grace of Allah">بفضلٍ من الله وتوفيقه</p>
+      <h1 class="names">
+        <span data-ar="Ahmad" data-en="Ahmad">Ahmad</span>
+        <span class="amp">&amp;</span>
+        <span data-ar="Sufana" data-en="Sufana">Sufana</span>
+      </h1>
+      <p class="hero-sub" data-ar="يتشرفان بدعوتكم لحضور حفل زواجهما" data-en="joyfully invite you to celebrate their wedding">يتشرفان بدعوتكم لحضور حفل زواجهما</p>
+      <div class="hero-date" data-ar="الجمعة ٣١ يوليو ٢٠٢٦ — ١٠:٠٠ مساءً" data-en="Friday, July 31, 2026 — 10:00 PM">الجمعة ٣١ يوليو ٢٠٢٦ — ١٠:٠٠ مساءً</div>
+    </div>
+    <div class="scroll-hint">
+      <span aria-hidden="true">▾</span>
+      <p data-ar="التفاصيل بالأسفل" data-en="Scroll for details">التفاصيل بالأسفل</p>
+    </div>
+  </div>
+
+  <!-- VERSE -->
+  <section class="reveal">
+    <p class="verse">﴿ وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ﴾</p>
+    <p class="verse-ref" data-ar="سورة الروم — الآية ٢١" data-en="Surah Ar-Rum — Verse 21">سورة الروم — الآية ٢١</p>
+  </section>
+
+  <!-- DETAILS -->
+  <section class="reveal">
+    <h2 class="sec-title" data-ar="تفاصيل المناسبة" data-en="The Details">تفاصيل المناسبة</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="cards">
+      <div class="card">
+        <div class="icon" aria-hidden="true">🗓</div>
+        <div class="label" data-ar="التاريخ" data-en="Date">التاريخ</div>
+        <div class="value" data-ar="الجمعة ٣١ يوليو ٢٠٢٦" data-en="Friday, July 31, 2026">الجمعة ٣١ يوليو ٢٠٢٦</div>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">🕙</div>
+        <div class="label" data-ar="الوقت" data-en="Time">الوقت</div>
+        <div class="value" data-ar="العاشرة مساءً" data-en="10:00 PM">العاشرة مساءً</div>
+      </div>
+      <div class="card">
+        <div class="icon" aria-hidden="true">📍</div>
+        <div class="label" data-ar="المكان" data-en="Venue">المكان</div>
+        <div class="value" data-ar="بيت المدينة — المدينة المنورة" data-en="Bait Al-Madinah — Madinah">بيت المدينة — المدينة المنورة</div>
+      </div>
+    </div>
+    <div class="btn-row" style="margin-top:34px">
+      <a class="btn btn-ghost" target="_blank" rel="noopener"
+         href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Ahmad+%26+Sufana+Wedding+%7C+%D8%B2%D9%88%D8%A7%D8%AC+%D8%A3%D8%AD%D9%85%D8%AF+%D9%88+%D8%B3%D8%A7%D9%81%D8%A7%D9%86%D8%A7&dates=20260731T190000Z/20260731T230000Z&details=%D8%AD%D9%81%D9%84+%D8%B2%D9%88%D8%A7%D8%AC+%D8%A3%D8%AD%D9%85%D8%AF+%D9%88+%D8%B3%D8%A7%D9%81%D8%A7%D9%86%D8%A7+%7C+Ahmad+%26+Sufana+Wedding&location=%D8%A8%D9%8A%D8%AA+%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9%D8%8C+%D8%A7%D9%84%D9%85%D8%AF%D9%8A%D9%86%D8%A9+%D8%A7%D9%84%D9%85%D9%86%D9%88%D8%B1%D8%A9"
+         data-ar="أضِف إلى التقويم" data-en="Add to Calendar">أضِف إلى التقويم</a>
+    </div>
+  </section>
+
+  <!-- COUNTDOWN -->
+  <section class="reveal">
+    <h2 class="sec-title" data-ar="العد التنازلي" data-en="Counting Down">العد التنازلي</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <div class="count" id="countdown" role="timer" aria-live="off">
+      <div class="unit"><div class="num" id="cd-d">--</div><div class="lbl" data-ar="يوم" data-en="Days">يوم</div></div>
+      <div class="unit"><div class="num" id="cd-h">--</div><div class="lbl" data-ar="ساعة" data-en="Hours">ساعة</div></div>
+      <div class="unit"><div class="num" id="cd-m">--</div><div class="lbl" data-ar="دقيقة" data-en="Minutes">دقيقة</div></div>
+      <div class="unit"><div class="num" id="cd-s">--</div><div class="lbl" data-ar="ثانية" data-en="Seconds">ثانية</div></div>
+    </div>
+  </section>
+
+  <!-- VENUE -->
+  <section class="reveal">
+    <h2 class="sec-title" data-ar="الموقع" data-en="The Venue">الموقع</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="venue-name" data-ar="بيت المدينة" data-en="Bait Al-Madinah">بيت المدينة</p>
+    <p class="venue-addr" data-ar="طريق الأمير نايف بن عبدالعزيز — حي العيون، المدينة المنورة" data-en="Prince Naif Ibn Abdulaziz Rd — Al Oyun District, Madinah">طريق الأمير نايف بن عبدالعزيز — حي العيون، المدينة المنورة</p>
+    <div class="map-wrap">
+      <iframe title="Venue map" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"
+        src="https://maps.google.com/maps?q=24.5455186,39.5896294&z=15&output=embed"></iframe>
+    </div>
+    <div class="btn-row">
+      <a class="btn btn-main" target="_blank" rel="noopener" href="https://share.google/Ah62gJjnMbHjQi4rL"
+         data-ar="افتح في خرائط جوجل" data-en="Open in Google Maps">افتح في خرائط جوجل</a>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="reveal">
+    <h2 class="sec-title" data-ar="تأكيد الحضور" data-en="RSVP">تأكيد الحضور</h2>
+    <div class="divider" aria-hidden="true"></div>
+    <p class="rsvp-note" data-ar="يسعدنا تأكيد حضوركم قبل يوم ٢٥ يوليو ٢٠٢٦" data-en="Kindly confirm your attendance before July 25, 2026">يسعدنا تأكيد حضوركم قبل يوم ٢٥ يوليو ٢٠٢٦</p>
+    <div class="btn-row">
+      <a class="btn btn-main" target="_blank" rel="noopener"
+         href="https://wa.me/966560902030?text=%D8%A3%D8%A4%D9%83%D8%AF%20%D8%AD%D8%B6%D9%88%D8%B1%D9%8A%20%D8%AD%D9%81%D9%84%20%D8%B2%D9%88%D8%A7%D8%AC%20%D8%A3%D8%AD%D9%85%D8%AF%20%D9%88%20%D8%B3%D8%A7%D9%81%D8%A7%D9%86%D8%A7%20%F0%9F%A4%8D"
+         data-ar="أؤكد حضوري عبر واتساب" data-en="Confirm via WhatsApp">أؤكد حضوري عبر واتساب</a>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p class="fam" data-ar="عائلتا العروسين" data-en="The Families of the Bride & Groom">عائلتا العروسين</p>
+  <p data-ar="نتشرف بحضوركم ومشاركتنا فرحتنا" data-en="Your presence is the greatest gift">نتشرف بحضوركم ومشاركتنا فرحتنا</p>
+</footer>
+
+<script>
+/* ---------- confetti generation ---------- */
+(function(){
+  const colors = ['#E4577E','#D89B3D','#4FB39A','#F0B7C8','#F2D091'];
+  const box = document.getElementById('confetti');
+  const n = window.innerWidth < 600 ? 18 : 32;
+  for(let i=0;i<n;i++){
+    const p = document.createElement('i');
+    const size = 5 + Math.random()*6;
+    p.style.left = Math.random()*100 + 'vw';
+    p.style.width = size + 'px';
+    p.style.height = size*0.55 + 'px';
+    p.style.background = colors[i % colors.length];
+    p.style.animationDuration = (9 + Math.random()*10) + 's';
+    p.style.animationDelay = (-Math.random()*18) + 's';
+    box.appendChild(p);
+  }
+})();
+
+/* ---------- language toggle ---------- */
+let lang = 'ar';
+const langBtn = document.getElementById('langBtn');
+function applyLang(){
+  document.documentElement.lang = lang;
+  document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+  if(lang === 'en'){ document.documentElement.setAttribute('lang-en',''); }
+  else{ document.documentElement.removeAttribute('lang-en'); }
+  document.querySelectorAll('[data-ar]').forEach(el=>{
+    el.textContent = el.getAttribute('data-'+lang);
+  });
+  langBtn.textContent = (lang === 'ar') ? 'English' : 'العربية';
+  syncMusicLabel();
+}
+langBtn.addEventListener('click', ()=>{ lang = (lang === 'ar') ? 'en' : 'ar'; applyLang(); });
+
+/* ---------- soft generative background music (Web Audio) ---------- */
+let audioCtx = null, master = null, musicOn = false, schedulerId = null;
+const musicBtn = document.getElementById('musicBtn');
+
+function syncMusicLabel(){
+  const span = musicBtn.querySelector('span');
+  if(musicOn){
+    span.textContent = (lang === 'ar') ? 'إيقاف الموسيقى' : 'Pause music';
+    musicBtn.classList.add('on');
+    musicBtn.setAttribute('aria-pressed','true');
+  }else{
+    span.textContent = (lang === 'ar') ? 'شغّل الموسيقى' : 'Play music';
+    musicBtn.classList.remove('on');
+    musicBtn.setAttribute('aria-pressed','false');
+  }
+}
+
+function initAudio(){
+  audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  master = audioCtx.createGain();
+  master.gain.value = 0;
+  // gentle echo for ambience
+  const delay = audioCtx.createDelay(2.0);
+  delay.delayTime.value = 0.55;
+  const feedback = audioCtx.createGain();
+  feedback.gain.value = 0.32;
+  const wet = audioCtx.createGain();
+  wet.gain.value = 0.35;
+  master.connect(audioCtx.destination);
+  master.connect(delay);
+  delay.connect(feedback); feedback.connect(delay);
+  delay.connect(wet); wet.connect(audioCtx.destination);
+}
+
+/* soothing pentatonic notes (A major pentatonic, low & slow) */
+const SCALE = [220.00, 246.94, 277.18, 329.63, 369.99, 440.00, 493.88, 554.37];
+function pluck(freq, when, vol, dur){
+  const o1 = audioCtx.createOscillator();
+  const o2 = audioCtx.createOscillator();
+  const g  = audioCtx.createGain();
+  o1.type = 'sine';     o1.frequency.value = freq;
+  o2.type = 'triangle'; o2.frequency.value = freq * 2; // soft shimmer octave
+  const g2 = audioCtx.createGain(); g2.gain.value = 0.18;
+  o1.connect(g); o2.connect(g2); g2.connect(g);
+  g.connect(master);
+  g.gain.setValueAtTime(0, when);
+  g.gain.linearRampToValueAtTime(vol, when + 0.08);
+  g.gain.exponentialRampToValueAtTime(0.0001, when + dur);
+  o1.start(when); o2.start(when);
+  o1.stop(when + dur + 0.1); o2.stop(when + dur + 0.1);
+}
+function pad(freq, when, dur){
+  const o = audioCtx.createOscillator();
+  const g = audioCtx.createGain();
+  o.type = 'sine'; o.frequency.value = freq / 2;
+  o.connect(g); g.connect(master);
+  g.gain.setValueAtTime(0, when);
+  g.gain.linearRampToValueAtTime(0.05, when + dur*0.3);
+  g.gain.linearRampToValueAtTime(0, when + dur);
+  o.start(when); o.stop(when + dur + 0.1);
+}
+let nextNote = 0;
+function scheduler(){
+  const ahead = 2.5;
+  while(nextNote < audioCtx.currentTime + ahead){
+    const step = 0.9 + Math.random()*1.1;             // slow, breathing rhythm
+    const note = SCALE[Math.floor(Math.random()*SCALE.length)];
+    pluck(note, nextNote, 0.10 + Math.random()*0.05, 2.6);
+    if(Math.random() < 0.3) pad(SCALE[0], nextNote, 6); // occasional warm low pad
+    if(Math.random() < 0.25) pluck(note * 1.5, nextNote + 0.35, 0.05, 2.0); // gentle harmony
+    nextNote += step;
+  }
+  schedulerId = setTimeout(scheduler, 500);
+}
+async function toggleMusic(){
+  if(!audioCtx) initAudio();
+  if(audioCtx.state === 'suspended') await audioCtx.resume();
+  musicOn = !musicOn;
+  const t = audioCtx.currentTime;
+  master.gain.cancelScheduledValues(t);
+  if(musicOn){
+    nextNote = Math.max(nextNote, t + 0.1);
+    master.gain.setValueAtTime(master.gain.value, t);
+    master.gain.linearRampToValueAtTime(0.8, t + 1.5);  // fade in
+    if(!schedulerId) scheduler();
+  }else{
+    master.gain.setValueAtTime(master.gain.value, t);
+    master.gain.linearRampToValueAtTime(0, t + 1.2);    // fade out
+    clearTimeout(schedulerId); schedulerId = null;
+  }
+  syncMusicLabel();
+}
+musicBtn.addEventListener('click', toggleMusic);
+
+/* ---------- opening gate: closes instantly, then starts music ---------- */
+const gate = document.getElementById('gate');
+const openBtn = document.getElementById('openBtn');
+let gateOpened = false;
+function openInvitation(e){
+  if(e){ e.preventDefault(); }
+  if(gateOpened) return;
+  gateOpened = true;
+  // 1) close the gate immediately so the tap always feels responsive
+  gate.classList.add('hidden');
+  setTimeout(()=>{ gate.style.display='none'; }, 950);
+  // 2) start music as a separate best-effort step (still inside the gesture)
+  try{ if(!musicOn){ toggleMusic(); } }catch(err){}
+}
+openBtn.addEventListener('click', openInvitation);
+openBtn.addEventListener('touchend', openInvitation, {passive:false});
+// tapping anywhere on the cover also opens it
+gate.addEventListener('click', openInvitation);
+
+/* ---------- countdown (event: 31 Jul 2026, 22:00 AST = 19:00 UTC) ---------- */
+const target = Date.UTC(2026, 6, 31, 19, 0, 0);
+const toArDigits = s => String(s).replace(/\d/g, d => '٠١٢٣٤٥٦٧٨٩'[d]);
+function padNum(n){ return String(n).padStart(2,'0'); }
+function tick(){
+  let diff = target - Date.now();
+  if(diff < 0) diff = 0;
+  const d = Math.floor(diff/86400000);
+  const h = Math.floor(diff%86400000/3600000);
+  const m = Math.floor(diff%3600000/60000);
+  const s = Math.floor(diff%60000/1000);
+  const vals = {d:padNum(d), h:padNum(h), m:padNum(m), s:padNum(s)};
+  for(const k in vals){
+    const v = (lang === 'ar') ? toArDigits(vals[k]) : vals[k];
+    document.getElementById('cd-'+k).textContent = v;
+  }
+}
+setInterval(tick, 1000);
+tick();
+
+/* ---------- reveal on scroll ---------- */
+const io = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+},{threshold:.15});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
